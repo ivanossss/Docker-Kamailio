@@ -5,7 +5,6 @@ FROM debian:stretch
 #WORKDIR /etc/kamailio/
 #COPY . .
 #CMD [ "/bin/sh" ] 
-#ENTRYPOINT ["kamailio" "-DD" "-E"]
 
 # avoid httpredir errors
 RUN sed -i 's/httpredir/deb/g' /etc/apt/sources.list
