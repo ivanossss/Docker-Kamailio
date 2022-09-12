@@ -4,4 +4,8 @@ FROM kamailio/kamailio:5.4.6-xenial
 
 VOLUME /etc/kamailio
 
+WORKDIR /etc/kamailio
+
+COPY . . 
+
 ENTRYPOINT ["kamailio", "-DD", "-E"]
