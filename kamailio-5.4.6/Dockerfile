@@ -5,8 +5,12 @@ FROM kamailio/kamailio:5.4.6-xenial
 
 WORKDIR /etc/kamailio
 
-COPY . . 
+COPY kamailio.cfg .
+COPY kamctlrc . 
 
-VOLUME /etc/kamailio
+#COPY modules /usr/lib/x86_64-linux-gnu/kamailio/
+
+VOLUME [/etc/kamailio]
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["kamailio", "-DD", "-E"]
